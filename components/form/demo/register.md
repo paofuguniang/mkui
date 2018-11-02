@@ -113,7 +113,7 @@ class RegistrationForm extends React.Component {
         },
         sm: {
           span: 16,
-          offset: 8,
+          offset: 0,
         },
       },
     };
@@ -246,7 +246,7 @@ class RegistrationForm extends React.Component {
             </Col>
           </Row>
         </FormItem>
-        <FormItem {...tailFormItemLayout}>
+        <FormItem>
           {getFieldDecorator('agreement', {
             valuePropName: 'checked',
           })(

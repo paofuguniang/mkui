@@ -371,11 +371,13 @@ class RangePicker extends React.Component<any, RangePickerState> {
       );
     };
 
+    const comClass = classNames(props.className, props.pickerClass, { [`${props.prefixCls}-disabled`]: props.disabled });
+
     return (
       <span
         ref={this.savePicker}
         id={props.id}
-        className={classNames(props.className, props.pickerClass)}
+        className={comClass}
         style={{ ...style, ...pickerStyle }}
         tabIndex={props.disabled ? -1 : 0}
         onFocus={props.onFocus}

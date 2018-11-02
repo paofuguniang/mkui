@@ -152,9 +152,14 @@ class WeekPicker extends React.Component<any, any> {
         </span>
       );
     };
+
+    const comClass = classNames(className, pickerClass, {
+      [`${prefixCls}-disabled`]: disabled
+    })
+
     return (
       <span
-        className={classNames(className, pickerClass)}
+        className={comClass}
         style={style}
         id={id}
       >

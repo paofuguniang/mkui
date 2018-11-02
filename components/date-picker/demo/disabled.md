@@ -17,8 +17,7 @@ A disabled state of the `DatePicker`.
 import { DatePicker } from 'antd';
 import moment from 'moment';
 
-const { MonthPicker, RangePicker } = DatePicker;
-
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 const dateFormat = 'YYYY-MM-DD';
 ReactDOM.render(
   <div>
@@ -30,6 +29,7 @@ ReactDOM.render(
       defaultValue={[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]}
       disabled
     />
+    <WeekPicker defaultValue={moment('2015-06', 'YYYY-MM')} disabled />
   </div>,
   mountNode);
 ````

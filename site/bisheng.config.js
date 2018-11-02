@@ -40,7 +40,7 @@ function usePrettyWebpackBar(config) {
 }
 
 module.exports = {
-  port: 8001,
+  port: 8003,
   source: {
     components: './components',
     docs: './docs',

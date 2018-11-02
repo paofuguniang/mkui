@@ -16,6 +16,22 @@
     display: inline-block;
     vertical-align: top; // https://github.com/ant-design/ant-design/issues/6403
     width: 100%;
+    &:hover{
+      input{
+        .input-hover()
+      }
+      .@{ant-prefix}-input-group-addon{
+        .input-hover();
+        &>i>svg{
+          .icon-hover()
+        }
+      }
+      .@{ant-prefix}-input-suffix{
+        &>i>svg{
+        .icon-hover()
+        }
+      }
+    }
   }
 }
 

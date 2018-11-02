@@ -233,4 +233,14 @@
   &-small &-icon {
     right: @control-padding-horizontal-sm - 1px;
   }
+  
+  &:hover svg {
+    color: @mk-input-hover-color;
+  }
+}
+
+.@{timepicker-prefix-cls}-disabled {
+  &:hover svg {
+    color: @disabled-color;
+  }
 }

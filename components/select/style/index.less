@@ -1,4 +1,5 @@
 @import "../../style/themes/default";
+@import "../../style/themes/mk_default";
 @import "../../style/mixins/index";
 @import "../../input/style/mixin";
 
@@ -76,15 +77,15 @@
     display: block;
 
     background-color: @component-background;
-    border-radius: @border-radius-base;
-    border: @border-width-base @border-style-base @border-color-base;
+    // border-radius: @border-radius-base;
+    border-bottom: @border-width-base @border-style-base @border-color-base;
     // strange align fix for chrome but works
     // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
     border-top-width: @border-width-base + 0.02px;
     transition: all .3s @ease-in-out;
 
     &:hover {
-      .hover;
+      .input-hover;
     }
 
     .@{select-prefix-cls}-focused &,
@@ -116,11 +117,11 @@
   }
 
   &-disabled {
-    color: @disabled-color;
+    color: @mk-input-color;
   }
 
   &-disabled &-selection {
-    background: @input-disabled-bg;
+    border-bottom:@border-width-base @border-style-disabled @border-color-base;
     cursor: not-allowed;
     &:hover,
     &:focus,
@@ -134,6 +135,10 @@
       visibility: hidden;
       pointer-events: none;
     }
+  }
+
+  &-disabled &-arrow{
+    display: none;
   }
 
   &-disabled &-selection--multiple &-selection__choice {
@@ -275,7 +280,6 @@
       width: 100%;
       background: transparent;
       outline: 0;
-      border-radius: @border-radius-base;
       line-height: 1;
     }
 

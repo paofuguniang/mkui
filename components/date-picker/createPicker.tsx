@@ -200,10 +200,14 @@ export default function createPicker(TheCalendar: React.ComponentClass): any {
         </div>
       );
 
+      const class_name = classNames(props.className, props.pickerClass, {
+        [`${prefixCls}-disabled`]: props.disabled
+      })
+
       return (
         <span
           id={props.id}
-          className={classNames(props.className, props.pickerClass)}
+          className={class_name}
           style={{ ...pickerStyle, ...props.style }}
           onFocus={props.onFocus}
           onBlur={props.onBlur}

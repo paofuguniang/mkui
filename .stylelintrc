@@ -19,6 +19,11 @@
     "value-list-max-empty-lines": null,
     "font-family-no-missing-generic-family-keyword": null,
     "no-descending-specificity": null,
+    "no-eol-whitespace":null,
     "block-opening-brace-space-before":null,
+    "declaration-colon-space-after":null,
+    "selector-combinator-space-before":null,
+    "max-empty-lines":null,
+    "color-hex-length":null
   }
 }
