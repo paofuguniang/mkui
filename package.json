@@ -188,7 +188,7 @@
     "test": "jest --config .jest.js --verbose=false",
     "test-node": "jest --config .jest.node.js",
     "test-all": "./scripts/test-all.sh",
-    "lint": "npm run lint:ts && npm run lint:es && npm run lint:demo",
+    "lint": "npm run lint:ts && npm run lint:es && npm run lint:demo && npm run lint:style",
     "lint:ts": "npm run tsc && antd-tools run ts-lint",
     "lint:es": "eslint tests site scripts components ./.*.js ./webpack.config.js --ext '.js,.jsx'",
     "lint:demo": "cross-env RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'",
