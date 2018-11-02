@@ -144,6 +144,7 @@ class TimePicker extends React.Component<TimePickerProps, any> {
     const format = this.getDefaultFormat();
     const className = classNames(props.className, {
       [`${props.prefixCls}-${props.size}`]: !!props.size,
+      [`${props.prefixCls}-disabled`]: props.disabled
     });
 
     const addon = (panel: React.ReactElement<any>) => (

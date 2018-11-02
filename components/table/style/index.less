@@ -1,4 +1,5 @@
 @import "../../style/themes/default";
+@import "../../style/themes/mk_default";
 @import "../../style/mixins/index";
 
 @table-prefix-cls: ~"@{ant-prefix}-table";
@@ -30,13 +31,28 @@
     border-radius: @border-radius-base @border-radius-base 0 0;
   }
 
+  &-thead > tr{
+    height:1;
+  }
+
   &-thead > tr > th {
-    background: @table-header-bg;
+    background: @mk-table-header-bg;
     transition: background .3s ease;
     text-align: left;
+    padding:0 !important;
     color: @table-header-color;
     font-weight: 500;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    line-height:40px;
+
+    &>div{
+      padding-left:16px;
+    }
+    
+    &:not(:last-child){
+      border-right:@border-width-base @border-style-base @border-color-split;
+    }
+   
+    border-bottom: @border-width-base @border-style-base @mk-border-color-split-light;
 
     &[colspan] {
       text-align: center;
@@ -114,7 +130,7 @@
           .@{table-prefix-cls}-filter-icon {
             &:hover {
               color: @text-color-secondary;
-              background: @table-header-filter-active-bg;
+              background: @mk-table-header-hover-bg;
             }
             &:active {
               color: @text-color;
@@ -125,13 +141,16 @@
 
       &.@{table-prefix-cls}-column-has-sorters {
         cursor: pointer;
+
         &:hover {
-          background: @table-header-sort-active-bg;
+          background: @mk-table-header-hover-bg;
+          // color:@mk-border-color-split-light;
           .@{iconfont-css-prefix}-filter,
           .@{table-prefix-cls}-filter-icon {
             background: @table-header-sort-active-bg;
           }
         }
+
         &:active {
           .@{table-prefix-cls}-column-sorter-up:not(.on),
           .@{table-prefix-cls}-column-sorter-down:not(.on) {
@@ -206,7 +225,7 @@
     &.@{table-prefix-cls}-row-hover,
     &:hover {
       & > td {
-        background: @table-row-hover-bg;
+        background: @mk-table-row-hover-bg;
       }
     }
   }
@@ -269,15 +288,15 @@
   }
 
   &-tbody > tr.@{table-prefix-cls}-row-selected td {
-    background: @table-selected-row-bg;
+    background: @mk-table-selected-row-bg;
   }
 
   &-thead > tr > th.@{table-prefix-cls}-column-sort {
-    background: @table-header-sort-bg;
+    background: @mk-table-header-hover-bg;
   }
 
   &-tbody > tr > td.@{table-prefix-cls}-column-sort {
-    background: @table-body-sort-bg;
+    background: @mk-table-header-bg;
   }
 
   &-thead > tr > th,
@@ -377,9 +396,9 @@
         border: 0;
       }
     }
-
-    .@{table-prefix-cls}-thead > tr:not(:last-child) > th {
-      border-bottom: @border-width-base @border-style-base @border-color-split;
+    
+    .@{table-prefix-cls}-thead > tr> th {
+      border-top: @border-width-base @border-style-base @border-color-split;
     }
 
     .@{table-prefix-cls}-thead > tr > th,

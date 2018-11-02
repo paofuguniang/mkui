@@ -42,10 +42,6 @@
     outline: none;
   }
 
-  &:hover &-input:not(.@{ant-prefix}-input-disabled) {
-    border-color: @primary-color;
-  }
-
   &:focus &-input:not(.@{ant-prefix}-input-disabled) {
     .active();
   }
@@ -94,5 +90,19 @@
   &-small &-clear,
   &-small &-icon {
     right: @control-padding-horizontal-sm;
+  }
+}
+
+.@{calendar-prefix-cls}-picker:not(.@{ant-prefix}-calendar-disabled) {
+  &:hover {
+    .@{calendar-prefix-cls}-picker-icon {
+      color:@mk-input-hover-color;
+    }
+    svg {
+      color:@mk-input-hover-color;
+    }
+    input {
+      border-color:@mk-input-hover-color;
+    }
   }
 }

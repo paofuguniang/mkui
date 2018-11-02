@@ -32,7 +32,7 @@ export default class Input extends React.Component<InputProps, any> {
   static defaultProps = {
     prefixCls: 'ant-input',
     type: 'text',
-    disabled: false,
+    disabled: false
   };
 
   static propTypes = {
@@ -91,7 +91,7 @@ export default class Input extends React.Component<InputProps, any> {
     return classNames(prefixCls, {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
-      [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-disabled`]: disabled
     });
   }
 
