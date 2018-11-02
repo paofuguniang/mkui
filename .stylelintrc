@@ -18,7 +18,6 @@
     "unit-no-unknown": null,
     "value-list-max-empty-lines": null,
     "font-family-no-missing-generic-family-keyword": null,
-    "no-descending-specificity": null,
-    "block-opening-brace-space-before":null,
+    "no-descending-specificity": null
   }
 }
