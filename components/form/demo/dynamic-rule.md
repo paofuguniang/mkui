@@ -24,7 +24,7 @@ const formItemLayout = {
 };
 const formTailLayout = {
   labelCol: { span: 4 },
-  wrapperCol: { span: 8, offset: 4 },
+  wrapperCol: { span: 8, offset: 0 },
 };
 class DynamicRule extends React.Component {
   state = {

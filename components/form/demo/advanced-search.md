@@ -76,7 +76,7 @@ class AdvancedSearchForm extends React.Component {
       >
         <Row gutter={24}>{this.getFields()}</Row>
         <Row>
-          <Col span={24} style={{ textAlign: 'right' }}>
+          <Col span={24} style={{ textAlign: 'left' }}>
             <Button type="primary" htmlType="submit">Search</Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               Clear
