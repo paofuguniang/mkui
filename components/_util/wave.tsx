@@ -4,7 +4,7 @@ import TransitionEvents from 'css-animation/lib/Event';
 
 let styleForPesudo: HTMLStyleElement | null;
 
-export default class Wave extends React.Component<{insertExtraNode?: boolean}> {
+export default class Wave extends React.Component<{ insertExtraNode?: boolean }> {
   private instance?: {
     cancel: () => void;
   };
@@ -34,11 +34,11 @@ export default class Wave extends React.Component<{insertExtraNode?: boolean}> {
     // Not white or transparnt or grey
     styleForPesudo = styleForPesudo || document.createElement('style');
     if (waveColor &&
-        waveColor !== '#ffffff' &&
-        waveColor !== 'rgb(255, 255, 255)' &&
-        this.isNotGrey(waveColor) &&
-        !/rgba\(\d*, \d*, \d*, 0\)/.test(waveColor) &&  // any transparent rgba color
-        waveColor !== 'transparent') {
+      waveColor !== '#ffffff' &&
+      waveColor !== 'rgb(255, 255, 255)' &&
+      this.isNotGrey(waveColor) &&
+      !/rgba\(\d*, \d*, \d*, 0\)/.test(waveColor) &&  // any transparent rgba color
+      waveColor !== 'transparent') {
       extraNode.style.borderColor = waveColor;
       styleForPesudo.innerHTML =
         `[ant-click-animating-without-extra-node]:after { border-color: ${waveColor}; }`;
@@ -54,9 +54,9 @@ export default class Wave extends React.Component<{insertExtraNode?: boolean}> {
 
   bindAnimationEvent = (node: HTMLElement) => {
     if (!node ||
-        !node.getAttribute ||
-        node.getAttribute('disabled') ||
-        node.className.indexOf('disabled') >= 0) {
+      !node.getAttribute ||
+      node.getAttribute('disabled') ||
+      node.className.indexOf('disabled') >= 0) {
       return;
     }
     const onClick = (e: MouseEvent) => {

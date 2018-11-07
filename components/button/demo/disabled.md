@@ -26,6 +26,22 @@ ReactDOM.render(
     <br />
     <Button type="dashed">Dashed</Button>
     <Button type="dashed" disabled>Dashed(disabled)</Button>
+     <br />
+    <Button type="mk-default">Mk-default</Button>
+    <Button type="mk-default" disabled>Mk-default(disabled)</Button>
+     <br />
+    <Button type="mk-dashed">Mk-dashed</Button>
+    <Button type="mk-dashed" disabled>Mk-dashed(disabled)</Button>
+     <br />
+    <Button type="gray">Gray</Button>
+    <Button type="gray" disabled>Gray(disabled)</Button>
+     <br />
+    <Button type="text">Text</Button>
+    <Button type="text" disabled>Text(disabled)</Button>
+     <br />
+     <Button type="text-danger">Text-danger</Button>
+    <Button type="text-danger" disabled>Text-danger</Button>
+     <br />
     <div style={{ padding: '8px 8px 0 8px', background: 'rgb(190, 200, 200)' }}>
       <Button ghost>Ghost</Button>
       <Button ghost disabled>Ghost(disabled)</Button>

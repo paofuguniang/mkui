@@ -22,6 +22,13 @@ ReactDOM.render(
     <Button>Default</Button>
     <Button type="dashed">Dashed</Button>
     <Button type="danger">Danger</Button>
+     <br/>
+    <Button type="mk-default">Mk-default</Button>
+    <Button type="mk-dashed">Mk-dashed</Button>
+    <br/>
+    <Button type="gray">Gray</Button>
+    <Button type="text">Text</Button>
+    <Button type="text-danger">Text-danger</Button>
   </div>,
   mountNode);
 ````

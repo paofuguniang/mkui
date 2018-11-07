@@ -34,7 +34,7 @@ function insertSpace(child: React.ReactChild, needInserted: boolean) {
   return child;
 }
 
-export type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'danger';
+export type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'danger' | 'text' | 'text-danger' | 'mk-default' | 'mk-dashed' | 'gray';
 export type ButtonShape = 'circle' | 'circle-outline';
 export type ButtonSize = 'small' | 'default' | 'large';
 export type ButtonHTMLType = 'submit' | 'button' | 'reset';
@@ -199,7 +199,8 @@ export default class Button extends React.Component<ButtonProps, any> {
     const kids = (children || children === 0)
       ? React.Children.map(children, child => insertSpace(child, this.isNeedInserted())) : null;
 
-    const title= isChristmas ? 'Ho Ho Ho!' : rest.title;
+    const title = isChristmas ? 'Ho Ho Ho!' : rest.title;
+
 
     if ('href' in rest) {
       return (
@@ -212,10 +213,22 @@ export default class Button extends React.Component<ButtonProps, any> {
           {iconNode}{kids}
         </a>
       );
+    } else if (type === 'text') {
+      const { htmlType, ...otherProps } = rest;
+      return (
+        <button
+          {...otherProps}
+          type={htmlType || 'button'}
+          className={classes}
+          onClick={this.handleClick}
+          title={title}
+        >
+          {iconNode}{kids}
+        </button>
+      );
     } else {
       // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
       const { htmlType, ...otherProps } = rest;
-
       return (
         <Wave>
           <button
