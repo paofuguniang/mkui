@@ -6,12 +6,12 @@
 
 .mk-tag(@bg; @color:#fff){
   color: @color;
-  border:none;
+  border:1px solid @bg;
   background: @bg;
   border-radius:1px;
   padding:0 8px;
-  height:22px;
-  line-height:22px;
+  height:20px;
+  line-height:20px;
 }
 
 .@{tag-prefix-cls} {
@@ -58,6 +58,15 @@
     line-height:16px;
   padding:0 6px;
   }
+
+  &-mk{
+    border:none;
+    border-radius:1px;
+    padding:0 8px;
+    height:22px;
+    line-height:22px;
+  }
+
   &-normal{
     .mk-tag(@mk-color);
   }

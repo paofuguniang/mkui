@@ -15,6 +15,7 @@ export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   type?: string;
   size?: string;
+  ghost?: boolean;
   color?: string;
   /** 标签是否可以关闭 */
   closable?: boolean;
@@ -38,7 +39,8 @@ class Tag extends React.Component<TagProps, TagState> {
   static defaultProps = {
     prefixCls: 'ant-tag',
     closable: false,
-    size: 'large'
+    size: 'large',
+    ghost: false
   };
 
   static getDerivedStateFromProps(nextProps: TagProps, state: TagState) {
@@ -130,9 +132,25 @@ class Tag extends React.Component<TagProps, TagState> {
         .test(color)
     );
   }
+  getTagStyleColor(type: string) {
+    // if (type) {
+    switch (type) {
+      // case 'normal':
+      //   return '#3296FA'
+      case 'success':
+        return '#00B600'
+      case 'warning':
+        return '#EFBC23'
+      default:
+        return '#3296FA'
+    }
+    // } else {
+    //   return 'rgba(0, 0, 0, 0.65)'
+    // }
+  }
 
   render() {
-    const { prefixCls, closable, color, type, size, className, children, style, ...otherProps } = this.props;
+    const { prefixCls, closable, color, type, size, ghost, className, children, style, ...otherProps } = this.props;
     const closeIcon = closable ? <Icon type="close" onClick={this.handleIconClick} /> : '';
     const isPresetColor = this.isPresetColor(color);
     const classString = classNames(prefixCls, {
@@ -141,6 +159,7 @@ class Tag extends React.Component<TagProps, TagState> {
       [`${prefixCls}-close`]: this.state.closing,
       [`${prefixCls}-${type}`]: type,
       [`${prefixCls}-${size}`]: size,
+      // [`${prefixCls}-ghost`]: ghost
     }, className);
     // fix https://fb.me/react-unknown-prop
     const divProps = omit(otherProps, [
@@ -148,10 +167,31 @@ class Tag extends React.Component<TagProps, TagState> {
       'afterClose',
       'visible',
     ]);
-    const tagStyle = {
-      backgroundColor: (color && !isPresetColor) ? color : null,
-      ...style,
-    };
+    var tagStyle;
+
+    // if (color === 'geekblue') {
+    //   console.log('ghost', ghost)
+    // }
+
+    if (ghost) {
+      if (color === 'geekblue') {
+        console.log('type', type)
+        console.log('color', type && type != 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'))
+        console.log('border', type && type != 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'))
+      }
+      tagStyle = {
+        backgroundColor: '#fff',
+        color: type && type != 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'),
+        border: type && type != 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'),
+        ...style,
+      };
+    } else {
+      tagStyle = {
+        backgroundColor: (color && !isPresetColor) ? color : null,
+        ...style,
+      };
+    }
+
     const tag = this.state.closed ? <span /> : (
       <div
         data-show={!this.state.closing}

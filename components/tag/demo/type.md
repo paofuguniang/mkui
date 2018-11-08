@@ -25,9 +25,18 @@ ReactDOM.render(
       <Tag type="success">mk-success</Tag>
       <Tag type="warning">mk-warning</Tag>
       <br/>
-      <Tag type="normal" color="blue">blue</Tag>
-      <Tag type="normal" color="geekblue">geekblue</Tag>
-      <Tag type="normal" color="purple">purple</Tag>
+      <Tag type="normal" ghost>默认</Tag>
+      <Tag type="success" ghost>mk-success</Tag>
+      <Tag type="warning" ghost>mk-warning</Tag>
+      <br/>
+      <Tag type="mk" color="blue">blue</Tag>
+      <Tag type="mk" color="geekblue">geekblue</Tag>
+      <Tag type="mk" color="purple">purple</Tag>
+      <br/>
+      <Tag type="mk" color="blue" ghost>blue</Tag>
+      <Tag type="mk" color="gray" ghost>gray</Tag>
+      <Tag type="mk" color="red" ghost>red</Tag>
+      <Tag type="mk" color="purple" ghost>purple</Tag>
   </div>,
   mountNode);
 ````
