@@ -9,6 +9,7 @@ import warning from 'warning';
 import Icon from '../icon';
 
 export interface AbstractSelectProps {
+  type?: string;
   prefixCls?: string;
   className?: string;
   size?: 'default' | 'large' | 'small';
@@ -88,6 +89,7 @@ export interface SelectLocale {
 }
 
 const SelectPropTypes = {
+  type: PropTypes.string,
   prefixCls: PropTypes.string,
   className: PropTypes.string,
   size: PropTypes.oneOf(['default', 'large', 'small']),
@@ -161,6 +163,7 @@ export default class Select extends React.Component<SelectProps, {}> {
       prefixCls,
       className = '',
       size,
+      type,
       mode,
       suffixIcon,
       ...restProps
@@ -170,6 +173,7 @@ export default class Select extends React.Component<SelectProps, {}> {
     const cls = classNames({
       [`${prefixCls}-lg`]: size === 'large',
       [`${prefixCls}-sm`]: size === 'small',
+      [`${prefixCls}-${type}`]: type,
     }, className);
 
     let { optionLabelProp } = this.props;

@@ -24,6 +24,7 @@ title: Select
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| type | 类型 (normal,gray) | string | - |
 | allowClear | 支持清除 | boolean | false |
 | autoClearSearchValue | 是否在选中项后清空搜索框，只在 `mode` 为 `multiple` 或 `tags` 时有效。 | boolean | true |
 | autoFocus | 默认获取焦点 | boolean | false |

@@ -213,7 +213,7 @@ export default class Button extends React.Component<ButtonProps, any> {
           {iconNode}{kids}
         </a>
       );
-    } else if (type === 'text') {
+    } else if (type === 'text' || type === 'text-danger') {
       const { htmlType, ...otherProps } = rest;
       return (
         <button

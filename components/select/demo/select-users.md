@@ -62,19 +62,49 @@ class UserRemoteSelect extends React.Component {
   render() {
     const { fetching, data, value } = this.state;
     return (
-      <Select
-        mode="multiple"
-        labelInValue
-        value={value}
-        placeholder="Select users"
-        notFoundContent={fetching ? <Spin size="small" /> : null}
-        filterOption={false}
-        onSearch={this.fetchUser}
-        onChange={this.handleChange}
-        style={{ width: '100%' }}
-      >
-        {data.map(d => <Option key={d.value}>{d.text}</Option>)}
-      </Select>
+      <div>
+        <Select
+          mode="multiple"
+          labelInValue
+          value={value}
+          placeholder="Select users"
+          notFoundContent={fetching ? <Spin size="small" /> : null}
+          filterOption={false}
+          onSearch={this.fetchUser}
+          onChange={this.handleChange}
+          style={{ width: '100%' }}
+        >
+          {data.map(d => <Option key={d.value}>{d.text}</Option>)}
+        </Select>
+        <Select
+          mode="multiple"
+          labelInValue
+          type="normal"
+          value={value}
+          placeholder="Select users"
+          notFoundContent={fetching ? <Spin size="small" /> : null}
+          filterOption={false}
+          onSearch={this.fetchUser}
+          onChange={this.handleChange}
+          style={{ width: '100%' }}
+        >
+          {data.map(d => <Option key={d.value}>{d.text}</Option>)}
+        </Select>
+         <Select
+          mode="multiple"
+          labelInValue
+          type="gray"
+          value={value}
+          placeholder="Select users"
+          notFoundContent={fetching ? <Spin size="small" /> : null}
+          filterOption={false}
+          onSearch={this.fetchUser}
+          onChange={this.handleChange}
+          style={{ width: '100%' }}
+        >
+          {data.map(d => <Option key={d.value}>{d.text}</Option>)}
+        </Select>
+      </div>
     );
   }
 }

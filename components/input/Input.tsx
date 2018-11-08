@@ -15,6 +15,7 @@ function fixControlledValue<T>(value: T) {
 }
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
+  type?: string;
   prefixCls?: string;
   size?: 'large' | 'default' | 'small';
   onPressEnter?: React.KeyboardEventHandler<HTMLInputElement>;
@@ -87,10 +88,11 @@ export default class Input extends React.Component<InputProps, any> {
   }
 
   getInputClassName() {
-    const { prefixCls, size, disabled } = this.props;
+    const { prefixCls, size, disabled, type } = this.props;
     return classNames(prefixCls, {
       [`${prefixCls}-sm`]: size === 'small',
       [`${prefixCls}-lg`]: size === 'large',
+      [`${prefixCls}-${type}`]: type,
       [`${prefixCls}-disabled`]: disabled
     });
   }
@@ -127,6 +129,7 @@ export default class Input extends React.Component<InputProps, any> {
     const groupClassName = classNames(`${props.prefixCls}-group-wrapper`, {
       [`${props.prefixCls}-group-wrapper-sm`]: props.size === 'small',
       [`${props.prefixCls}-group-wrapper-lg`]: props.size === 'large',
+      [`${props.prefixCls}-group-wrapper-${props.type}`]: props.type
     });
 
     // Need another wrapper for changing display:table to display:inline-block
@@ -166,6 +169,7 @@ export default class Input extends React.Component<InputProps, any> {
     const affixWrapperCls = classNames(props.className, `${props.prefixCls}-affix-wrapper`, {
       [`${props.prefixCls}-affix-wrapper-sm`]: props.size === 'small',
       [`${props.prefixCls}-affix-wrapper-lg`]: props.size === 'large',
+      [`${props.prefixCls}-affix-wrapper-${props.type}`]: props.type,
     });
     return (
       <span

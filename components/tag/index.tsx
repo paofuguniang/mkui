@@ -13,6 +13,8 @@ export { CheckableTagProps } from './CheckableTag';
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   prefixCls?: string;
   className?: string;
+  type?: string;
+  size?: string;
   color?: string;
   /** 标签是否可以关闭 */
   closable?: boolean;
@@ -36,6 +38,7 @@ class Tag extends React.Component<TagProps, TagState> {
   static defaultProps = {
     prefixCls: 'ant-tag',
     closable: false,
+    size: 'large'
   };
 
   static getDerivedStateFromProps(nextProps: TagProps, state: TagState) {
@@ -124,18 +127,20 @@ class Tag extends React.Component<TagProps, TagState> {
     if (!color) { return false; }
     return (
       /^(pink|red|yellow|orange|cyan|green|blue|purple|geekblue|magenta|volcano|gold|lime)(-inverse)?$/
-      .test(color)
+        .test(color)
     );
   }
 
   render() {
-    const { prefixCls, closable, color, className, children, style, ...otherProps } = this.props;
+    const { prefixCls, closable, color, type, size, className, children, style, ...otherProps } = this.props;
     const closeIcon = closable ? <Icon type="close" onClick={this.handleIconClick} /> : '';
     const isPresetColor = this.isPresetColor(color);
     const classString = classNames(prefixCls, {
       [`${prefixCls}-${color}`]: isPresetColor,
       [`${prefixCls}-has-color`]: (color && !isPresetColor),
       [`${prefixCls}-close`]: this.state.closing,
+      [`${prefixCls}-${type}`]: type,
+      [`${prefixCls}-${size}`]: size,
     }, className);
     // fix https://fb.me/react-unknown-prop
     const divProps = omit(otherProps, [
@@ -147,7 +152,7 @@ class Tag extends React.Component<TagProps, TagState> {
       backgroundColor: (color && !isPresetColor) ? color : null,
       ...style,
     };
-    const tag = this.state.closed ? <span/> : (
+    const tag = this.state.closed ? <span /> : (
       <div
         data-show={!this.state.closing}
         {...divProps}

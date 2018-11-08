@@ -69,13 +69,66 @@
     }
   }
 
+  &-normal{
+    .@{select-prefix-cls}-selection{
+      border: 1px solid @mk-border-color;
+      .@{select-prefix-cls}-focused &,
+      &:focus,
+      &:active {
+        .active;
+        box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@outline-color, 20%);
+        svg{
+          color:@mk-input-hover-color;
+        }
+      }
+    } 
+  }
+
+  &-mk-normal{
+    .@{select-prefix-cls}-selection{
+      color:@mk-color;
+      border: 1px solid @mk-border-color;
+      .@{select-prefix-cls}-focused &,
+      &:focus,
+      &:active {
+        .active;
+        box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@outline-color, 20%);
+        svg{
+          color:@mk-input-hover-color;
+        }
+      }
+    } 
+  }
+
+  &-gray{
+    .@{select-prefix-cls}-selection{
+      border-color:@mk-btn-disabled-bg !important;
+      border:@border-width-base @border-style-base @mk-btn-disabled-bg;
+      background:@mk-btn-disabled-bg;
+      color:@mk-input-color;
+      svg{
+        color:@mk-select-gray-icon-color;
+      }
+      .@{select-prefix-cls}-focused &,
+      &:hover,
+      &:focus,
+      &:active {
+        .active;
+        border-color:@mk-btn-disabled-bg;
+        color:@mk-color;
+        // svg{
+        //   color:@mk-color;
+        // }
+      }
+    } 
+  }
+
+
   &-selection {
     outline: none;
     user-select: none;
-
     box-sizing: border-box;
     display: block;
-
     background-color: @component-background;
     // border-radius: @border-radius-base;
     border-bottom: @border-width-base @border-style-base @border-color-base;
@@ -92,6 +145,9 @@
     &:focus,
     &:active {
       .active;
+      svg{
+        color:@mk-input-hover-color;
+      }
     }
 
     &__clear {
@@ -128,6 +184,9 @@
     &:active {
       border-color: @border-color-base;
       box-shadow: none;
+      svg{
+        color:@mk-svg-color !important;
+      }
     }
 
     &__clear {
@@ -136,9 +195,27 @@
       pointer-events: none;
     }
   }
+  
+  &-disabled.@{select-prefix-cls}-normal &-selection{
+    color: @mk-svg-color;
+    background: @mk-select-normal-bg-disabled;
+    border-style:@border-style-base;
+    cursor: not-allowed;
+  }
 
-  &-disabled &-arrow{
-    display: none;
+  &-disabled.@{select-prefix-cls}-mk-normal &-selection{
+    color: @mk-color;
+    background: @mk-btn-disabled-bg;
+    opacity: 0.5;
+    border-style:@border-style-base;
+    cursor: not-allowed;
+  }
+
+  &-disabled.@{select-prefix-cls}-gray &-selection{
+      // border:1px solid @mk-select-gray-bg-disabled;
+      // background: @mk-select-gray-bg-disabled;
+      color:@mk-select-gray-color-disabled;
+      cursor: not-allowed;
   }
 
   &-disabled &-selection--multiple &-selection__choice {

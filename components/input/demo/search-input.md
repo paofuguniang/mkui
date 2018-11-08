@@ -27,6 +27,20 @@ ReactDOM.render(
     />
     <br /><br />
     <Search
+      type="normal"
+      placeholder="input search text"
+      onSearch={value => console.log(value)}
+      style={{ width: 200 }}
+    />
+    <br /><br />
+    <Search
+      type="gray"
+      placeholder="input search text"
+      onSearch={value => console.log(value)}
+      style={{ width: 200 }}
+    />
+    <br /><br />
+    <Search
       placeholder="input search text"
       onSearch={value => console.log(value)}
       enterButton

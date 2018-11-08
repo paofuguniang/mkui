@@ -6,13 +6,15 @@
 
 // size mixins for input
 .input-lg() {
-  padding: @input-padding-vertical-lg @input-padding-horizontal-lg;
+  // padding: @input-padding-vertical-lg @input-padding-horizontal-lg;
+  padding: @input-padding-vertical-lg 0;
   height: @input-height-lg;
   font-size: @font-size-lg;
 }
 
 .input-sm() {
-  padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
+  // padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
+  padding: @input-padding-vertical-sm 0;
   height: @input-height-sm;
 }
 
@@ -52,7 +54,7 @@
 .input() {
   position: relative;
   display: inline-block;
-  padding: @input-padding-vertical-base @input-padding-horizontal-base;
+  padding: @input-padding-vertical-base 0;
   width: 100%;
   height: @input-height-base;
   font-size: @font-size-base;
@@ -65,6 +67,9 @@
   border-radius: 0;
   .placeholder(); // Reset placeholder
   transition: all .3s;
+  // &::placeholder {
+  //   color: #a3b1bf;
+  // }
 
   &:hover {
     .input-hover();
@@ -377,8 +382,12 @@
   display: inline-block;
   width: 100%;
 
-  &:hover .@{inputClass}:not(.@{inputClass}-disabled) {
-    .input-hover();
+  &:not(.ant-input-affix-wrapper-gray):hover {
+    .icon-hover();
+    .@{inputClass}:not(.@{inputClass}-disabled){
+      .input-hover();
+    }
+    
   }
 
   .@{inputClass} {

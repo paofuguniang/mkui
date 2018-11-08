@@ -33,7 +33,26 @@ ReactDOM.render(
       <Option value="disabled" disabled>Disabled</Option>
       <Option value="Yiminghe">yiminghe</Option>
     </Select>
+    <Select suffixIcon={smileIcon} type="normal" defaultValue="lucy" style={{ width: 120 }} onChange={handleChange}>
+      <Option value="jack">Jack</Option>
+      <Option value="lucy">Lucy</Option>
+      <Option value="disabled" disabled>Disabled</Option>
+      <Option value="Yiminghe">yiminghe</Option>
+    </Select>
+    <Select suffixIcon={smileIcon} type="gray" defaultValue="lucy" style={{ width: 120 }} onChange={handleChange}>
+      <Option value="jack">Jack</Option>
+      <Option value="lucy">Lucy</Option>
+      <Option value="disabled" disabled>Disabled</Option>
+      <Option value="Yiminghe">yiminghe</Option>
+    </Select>
+    <br/>
     <Select suffixIcon={mehIcon} defaultValue="lucy" style={{ width: 120 }} disabled>
+      <Option value="lucy">Lucy</Option>
+    </Select>
+    <Select suffixIcon={mehIcon} type="normal" defaultValue="lucy" style={{ width: 120 }} disabled>
+      <Option value="lucy">Lucy</Option>
+    </Select>
+    <Select suffixIcon={mehIcon} type="gray" defaultValue="lucy" style={{ width: 120 }} disabled>
       <Option value="lucy">Lucy</Option>
     </Select>
   </div>,
