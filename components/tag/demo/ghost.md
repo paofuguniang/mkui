@@ -27,7 +27,7 @@ ReactDOM.render(
       <Tag type="warning" size="small" ghost>warning</Tag>
       <br/>
       <Tag type="mk" color="blue">blue</Tag>
-      <Tag type="mk" color="red">red</Tag>
+      <Tag type="mk" color="red"/*  */>red</Tag>
       <Tag type="mk" color="purple">purple</Tag>
       <br/>
       <Tag type="mk" color="blue" ghost>blue</Tag>
