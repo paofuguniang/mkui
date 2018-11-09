@@ -66,15 +66,10 @@ export default class Wave extends React.Component<{ insertExtraNode?: boolean }>
       }
       this.resetEffect(node);
       // Get wave color from target
-      const borderColor = getComputedStyle(node).getPropertyValue('border-color');
-      const backgroundColor = getComputedStyle(node).getPropertyValue('background-color');
-      const borderTopColor = getComputedStyle(node).getPropertyValue('border-top-color');
-      const borderBottomColor = getComputedStyle(node).getPropertyValue('border-bottom-color');
-      const waveArray = [borderColor, backgroundColor, borderTopColor, borderBottomColor];
 
-      const waveColor = waveArray.filter(item => item != 'rgba(0, 0, 0, 0)' && item != 'rgb(255, 255, 255)')[0] || 'rgba(0, 0, 0, 0)';
-
-      // console.log('waveColor', waveColor, 'backgroundColor', backgroundColor, 'borderColor', borderColor)
+      const waveColor = getComputedStyle(node).getPropertyValue('border-top-color') ||
+        getComputedStyle(node).getPropertyValue('border-color') ||
+        getComputedStyle(node).getPropertyValue('background-color');
 
       this.clickWaveTimeoutId = window.setTimeout(() => this.onClick(node, waveColor), 0);
     };
