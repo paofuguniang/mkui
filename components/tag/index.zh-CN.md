@@ -18,6 +18,9 @@ title: Tag
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| type | 标签常用样式（normal success warning mk）mk不代表样式，只是去除圆角作用 | string | - |
+| ghost | 幽灵标签 | boolean | false |
+| size | 标签尺寸（large small） | string | large |
 | afterClose | 关闭动画完成后的回调 | () => void | - |
 | closable | 标签是否可以关闭 | boolean | false |
 | color | 标签色 | string | - |

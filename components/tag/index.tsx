@@ -157,8 +157,9 @@ class Tag extends React.Component<TagProps, TagState> {
       [`${prefixCls}-${color}`]: isPresetColor,
       [`${prefixCls}-has-color`]: (color && !isPresetColor),
       [`${prefixCls}-close`]: this.state.closing,
-      [`${prefixCls}-${type}`]: type,
       [`${prefixCls}-${size}`]: size,
+      [`${prefixCls}-${type}`]: type,
+
       // [`${prefixCls}-ghost`]: ghost
     }, className);
     // fix https://fb.me/react-unknown-prop
@@ -180,7 +181,7 @@ class Tag extends React.Component<TagProps, TagState> {
         console.log('border', type && type != 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'))
       }
       tagStyle = {
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         color: type && type != 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'),
         border: type && type != 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'),
         ...style,
