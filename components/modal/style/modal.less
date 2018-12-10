@@ -79,21 +79,26 @@
     border-radius: @border-radius-base @border-radius-base 0 0;
     background: @modal-header-bg;
     color: @text-color;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    // border-bottom: @border-width-base @border-style-base @border-color-split;
   }
 
   &-body {
-    padding: 24px;
+    padding: 8px 24px;
     font-size: @font-size-base;
     line-height: @line-height-base;
     word-wrap: break-word;
   }
 
   &-footer {
-    border-top: @border-width-base @border-style-base @border-color-split;
+    // border-top: @border-width-base @border-style-base @border-color-split;
     padding: 10px 16px;
     text-align: right;
     border-radius: 0 0 @border-radius-base @border-radius-base;
+
+    .@{ant-prefix}-btn {
+      border: none;
+    }
+
     button + button {
       margin-left: 8px;
       margin-bottom: 0;
