@@ -20,14 +20,14 @@ import { Tag } from 'antd';
 
 ReactDOM.render(
   <div>
-      <Tag type="normal">默认</Tag>
-      <Tag type="normal" size="small">默认</Tag>
-      <br/>
-      <Tag type="success" size="large">success</Tag>
-      <Tag type="success" size="small">success</Tag>
-      <br/>
-      <Tag type="warning" size="large">warning</Tag>
-      <Tag type="warning" size="small">warning</Tag>
+    <Tag type="normal">默认</Tag>
+    <Tag type="normal" size="small">默认</Tag>
+    <br />
+    <Tag type="success" size="large">success</Tag>
+    <Tag type="success" size="small">success</Tag>
+    <br />
+    <Tag type="warning" size="large">warning</Tag>
+    <Tag type="warning" size="small">warning</Tag>
   </div>,
   mountNode);
 ````

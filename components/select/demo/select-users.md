@@ -90,7 +90,7 @@ class UserRemoteSelect extends React.Component {
         >
           {data.map(d => <Option key={d.value}>{d.text}</Option>)}
         </Select>
-         <Select
+        <Select
           mode="multiple"
           labelInValue
           type="gray"

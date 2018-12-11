@@ -39,7 +39,7 @@
 .@{ant-prefix}-input-affix-wrapper {
   .reset-component;
   .input-affix-wrapper(~"@{ant-prefix}-input");
-  &:not(.ant-input-affix-wrapper-gray):hover 
+  &:not(.ant-input-affix-wrapper-gray):hover, 
     .@{ant-prefix}-input:not(.@{ant-prefix}-input-disabled) {
     .input-hover();
   }
@@ -49,7 +49,6 @@
       border: 1px solid @mk-border-color;
       padding:@input-padding-vertical-base @input-padding-horizontal-base;
     }
-    
   }
 
   &-gray {

@@ -185,6 +185,7 @@
     "lint-fix": "npm run lint-fix:code && npm run lint-fix:demo",
     "lint-fix:code": "eslint --fix tests site scripts components ./.*.js ./webpack.config.js --ext '.js,.jsx'",
     "lint-fix:demo": "eslint-tinker ./components/*/demo/*.md",
+    "lint-fix:style": "stylelint \"{site,components}/**/*.less\" --fix",
     "sort-api": "node ./scripts/sort-api-table.js",
     "dist": "antd-tools run dist",
     "compile": "antd-tools run compile",

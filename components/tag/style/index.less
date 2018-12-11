@@ -6,12 +6,9 @@
 
 .mk-tag(@bg; @color:#fff){
   color: @color;
-  border:1px solid @bg;
+  border:none;
   background: @bg;
-  border-radius:1px;
-  // padding:0 8px;
-  // height:20px;
-  // line-height:20px;
+  border-radius: 0;
 }
 
 .@{tag-prefix-cls} {
@@ -20,7 +17,7 @@
   line-height: 20px;
   height: 22px;
   padding: 0 7px;
-  border-radius: @border-radius-base;
+  border-radius: 0;
   border: @border-width-base @border-style-base @border-color-base;
   background: @tag-default-bg;
   font-size: @tag-font-size;
@@ -61,7 +58,7 @@
 
   &-mk{
     border:none;
-    border-radius:1px;
+    border-radius:0;
     // padding:0 8px;
     // height:22px;
     // line-height:22px;
