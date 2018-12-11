@@ -449,13 +449,11 @@ textarea.ant-input {
 .ant-input-affix-wrapper .ant-input:not(:last-child) {
   padding-right: 30px;
 }
-.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-gray):hover,
-.ant-input-affix-wrapper .ant-input:not(.ant-input-disabled) {
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-gray):hover .ant-input:not(.ant-input-disabled) {
   border-color: #3296fa;
   border-right-width: 1px !important;
 }
-.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-gray):hover i:not(.ant-input-search-btn):not(.ant-select-remove-icon) svg,
-.ant-input-affix-wrapper .ant-input:not(.ant-input-disabled) i:not(.ant-input-search-btn):not(.ant-select-remove-icon) svg {
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-gray):hover .ant-input:not(.ant-input-disabled) i:not(.ant-input-search-btn):not(.ant-select-remove-icon) svg {
   color: #3296fa;
 }
 .ant-input-affix-wrapper-normal .ant-input {
