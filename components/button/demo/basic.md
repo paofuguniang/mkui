@@ -17,7 +17,7 @@ There are `primary` button, `default` button, `dashed` button and `danger` butto
 import { Button } from 'antd';
 
 ReactDOM.render(
-  <div>
+  <div style={{background:'rgba(0,0,0,0.5)',padding:'10px'}}>
     <Button type="primary">Primary</Button>
     <Button>Default</Button>
     <Button type="dashed">Dashed</Button>

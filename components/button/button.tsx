@@ -216,15 +216,14 @@ export default class Button extends React.Component<ButtonProps, any> {
     } else if (type === 'text' || type === 'text-danger') {
       const { htmlType, ...otherProps } = rest;
       return (
-        <button
+        <span
           {...otherProps}
-          type={htmlType || 'button'}
-          className={classes}
+          // type={htmlType || 'button'}
+          className={`${prefixCls}-${type}`}
           onClick={this.handleClick}
           title={title}
-        >
-          {iconNode}{kids}
-        </button>
+        > {iconNode}{kids}
+        </span>
       );
     } else {
       // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
