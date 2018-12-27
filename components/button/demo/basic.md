@@ -17,15 +17,15 @@ There are `primary` button, `default` button, `dashed` button and `danger` butto
 import { Button } from 'antd';
 
 ReactDOM.render(
-  <div style={{background:'rgba(0,0,0,0.5)',padding:'10px'}}>
+  <div style={{ background: 'rgba(0,0,0,0.5)', padding: '10px' }}>
     <Button type="primary">Primary</Button>
     <Button>Default</Button>
     <Button type="dashed">Dashed</Button>
     <Button type="danger">Danger</Button>
-     <br/>
+    <br />
     <Button type="mk-default">Mk-default</Button>
     <Button type="mk-dashed">Mk-dashed</Button>
-    <br/>
+    <br />
     <Button type="gray">Gray</Button>
     <Button type="text">Text</Button>
     <Button type="text-danger">Text-danger</Button>

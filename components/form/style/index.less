@@ -19,6 +19,7 @@
 .@{form-prefix-cls}-item-required:before {
   display: inline-block;
   margin-right: 4px;
+  margin-left: -10px;
   content: "*";
   font-family: SimSun;
   line-height: 1;
@@ -97,15 +98,15 @@ input[type="checkbox"] {
   }
 
   &-label {
-    // text-align: right;
-    vertical-align: middle;
-    line-height: @form-component-max-height;
+    line-height: 1.2;
     display: inline-block;
-    overflow: hidden;
+    overflow: visible;
     white-space: nowrap;
+    font-size: 13px;
 
     label {
       color: @mk-label-color;
+      font-size: 1em;
 
       &:after {
         & when (@form-item-trailing-colon=true) {
@@ -138,7 +139,7 @@ input[type="checkbox"] {
   line-height: @line-height-base + 0.024;
   transition: color .3s @ease-out; // sync input color transition
   margin-top: @form-help-margin-top;
-  margin-bottom:16px;
+  margin-bottom: 0;
   clear: both;
 }
 
@@ -303,9 +304,9 @@ form {
 .make-vertical-layout-label() {
   padding: @form-vertical-label-padding;
   margin: @form-vertical-label-margin;
-  display: block;
+  display: inline-block;
   text-align: left;
-  line-height: @line-height-base;
+  line-height: 1.2;
 
   label:after {
     display: none;

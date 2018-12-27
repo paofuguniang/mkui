@@ -84,9 +84,6 @@
         color:@mk-input-hover-color;
       }
     }
-    & + .@{ant-prefix}-input-suffix svg{
-      color:@mk-input-hover-color;
-    }
   }
 
   &-disabled {
@@ -182,7 +179,7 @@
 
     // Reset Select's style in addon
     .@{ant-prefix}-select {
-      margin: -(@input-padding-vertical-base + 1px) (-@input-padding-horizontal-base);  // lesshint spaceAroundOperator: false
+      margin: -(@input-padding-vertical-base + 1px) (-@input-padding-horizontal-base);
 
       .@{ant-prefix}-select-selection {
         background-color: inherit;
@@ -203,7 +200,7 @@
     // https://github.com/ant-design/ant-design/issues/3714
     > i:only-child:after {
       position: absolute;
-      content: '';
+      content: "";
       top: 0;
       left: 0;
       right: 0;
@@ -384,10 +381,9 @@
 
   &:not(.ant-input-affix-wrapper-gray):hover {
     .icon-hover();
-    .@{inputClass}:not(.@{inputClass}-disabled){
+    .@{inputClass}:not(.@{inputClass}-disabled) {
       .input-hover();
     }
-    
   }
 
   .@{inputClass} {

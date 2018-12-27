@@ -40,7 +40,7 @@ class Tag extends React.Component<TagProps, TagState> {
     prefixCls: 'ant-tag',
     closable: false,
     size: 'large',
-    ghost: false
+    ghost: false,
   };
 
   static getDerivedStateFromProps(nextProps: TagProps, state: TagState) {
@@ -56,7 +56,6 @@ class Tag extends React.Component<TagProps, TagState> {
           closed: !nextProps.visible,
         };
       }
-
       return newState;
     }
     return null;
@@ -168,22 +167,22 @@ class Tag extends React.Component<TagProps, TagState> {
       'afterClose',
       'visible',
     ]);
-    var tagStyle;
+    let tagStyle;
 
     // if (color === 'geekblue') {
     //   console.log('ghost', ghost)
     // }
 
     if (ghost) {
-      if (color === 'geekblue') {
-        console.log('type', type)
-        console.log('color', type && type != 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'))
-        console.log('border', type && type != 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'))
-      }
+      // if (color === 'geekblue') {
+      //   console.log('type', type)
+      //   console.log('color', type && type !== 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'))
+      //   console.log('border', type && type !== 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'))
+      // }
       tagStyle = {
         backgroundColor: 'transparent',
-        color: type && type != 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'),
-        border: type && type != 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'),
+        color: type && type !== 'mk' ? this.getTagStyleColor(type) : (color ? color : 'rgba(0, 0, 0, 0.65)'),
+        border: type && type !== 'mk' ? `1px solid ${this.getTagStyleColor(type)}` : (color ? `1px solid ${color}` : '1px solid #d9d9d9'),
         ...style,
       };
     } else {

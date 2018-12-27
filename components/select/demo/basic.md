@@ -35,7 +35,7 @@ ReactDOM.render(
       <Option value="disabled" disabled>Disabled</Option>
       <Option value="Yiminghe">yiminghe</Option>
     </Select>
-    <br/>
+    <br />
     <Select defaultValue="lucy" type="normal" style={{ width: 120 }} onChange={handleChange}>
       <Option value="jack">Jack</Option>
       <Option value="lucy">Lucy</Option>
@@ -48,20 +48,20 @@ ReactDOM.render(
       <Option value="disabled" disabled>Disabled</Option>
       <Option value="Yiminghe">yiminghe</Option>
     </Select>
-    <br/>
+    <br />
     <Select defaultValue="lucy" type="mk-normal" style={{ width: 120 }} onChange={handleChange}>
       <Option value="jack">Jack</Option>
       <Option value="lucy">Lucy</Option>
       <Option value="disabled" disabled>Disabled</Option>
       <Option value="Yiminghe">yiminghe</Option>
     </Select>
-     <Select defaultValue="lucy" type="mk-normal" style={{ width: 120 }} onChange={handleChange} disabled>
+    <Select defaultValue="lucy" type="mk-normal" style={{ width: 120 }} onChange={handleChange} disabled>
       <Option value="jack">Jack</Option>
       <Option value="lucy">Lucy</Option>
       <Option value="disabled" disabled>Disabled</Option>
       <Option value="Yiminghe">yiminghe</Option>
     </Select>
-    <br/>
+    <br />
     <Select defaultValue="lucy" type="gray" style={{ width: 120 }} onChange={handleChange}>
       <Option value="jack">Jack</Option>
       <Option value="lucy">Lucy</Option>

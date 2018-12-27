@@ -22,7 +22,7 @@ function tinycolor (color, opts) {
        return color;
     }
     // If we are called as a function, call using new instead
-    if (!(this instanceof tinycolor)) {
+    if ( !(this instanceof tinycolor)) {
         return new tinycolor(color, opts);
     }
 

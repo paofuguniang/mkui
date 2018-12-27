@@ -18,21 +18,21 @@ import { Tag } from 'antd';
 
 ReactDOM.render(
   <div>
-      <Tag type="normal" size="small">默认</Tag>
-      <Tag type="success" size="small">success</Tag>
-      <Tag type="warning" size="small">warning</Tag>
-      <br/>
-      <Tag type="normal" size="small" ghost>默认</Tag>
-      <Tag type="success" size="small" ghost>success</Tag>
-      <Tag type="warning" size="small" ghost>warning</Tag>
-      <br/>
-      <Tag type="mk" color="blue">blue</Tag>
-      <Tag type="mk" color="red"/*  */>red</Tag>
-      <Tag type="mk" color="purple">purple</Tag>
-      <br/>
-      <Tag type="mk" color="blue" ghost>blue</Tag>
-      <Tag type="mk" color="red" ghost>red</Tag>
-      <Tag type="mk" color="purple" ghost>purple</Tag>
+    <Tag type="normal" size="small">默认</Tag>
+    <Tag type="success" size="small">success</Tag>
+    <Tag type="warning" size="small">warning</Tag>
+    <br />
+    <Tag type="normal" size="small" ghost>默认</Tag>
+    <Tag type="success" size="small" ghost>success</Tag>
+    <Tag type="warning" size="small" ghost>warning</Tag>
+    <br />
+    <Tag type="mk" color="blue">blue</Tag>
+    <Tag type="mk" color="red"/*  */>red</Tag>
+    <Tag type="mk" color="purple">purple</Tag>
+    <br />
+    <Tag type="mk" color="blue" ghost>blue</Tag>
+    <Tag type="mk" color="red" ghost>red</Tag>
+    <Tag type="mk" color="purple" ghost>purple</Tag>
   </div>,
   mountNode);
 ````

@@ -69,60 +69,62 @@
     }
   }
 
-  &-normal{
-    .@{select-prefix-cls}-selection{
+  &-normal {
+    .@{select-prefix-cls}-selection {
       border: 1px solid @mk-border-color;
+
       .@{select-prefix-cls}-focused &,
       &:focus,
       &:active {
         .active;
         box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@outline-color, 20%);
-        svg{
+
+        svg {
           color:@mk-input-hover-color;
         }
       }
-    } 
+    }
   }
 
-  &-mk-normal{
-    .@{select-prefix-cls}-selection{
-      color:@mk-color;
+  &-mk-normal {
+    .@{select-prefix-cls}-selection {
+      color: @mk-color;
       border: 1px solid @mk-border-color;
+
       .@{select-prefix-cls}-focused &,
       &:focus,
       &:active {
         .active;
         box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@outline-color, 20%);
-        svg{
-          color:@mk-input-hover-color;
+
+        svg {
+          color: @mk-input-hover-color;
         }
       }
-    } 
+    }
   }
 
-  &-gray{
-    .@{select-prefix-cls}-selection{
+  &-gray {
+    .@{select-prefix-cls}-selection {
       border-color:@mk-btn-disabled-bg !important;
       border:@border-width-base @border-style-base @mk-btn-disabled-bg;
       background:@mk-btn-disabled-bg;
       color:@mk-input-color;
-      svg{
-        color:@mk-select-gray-icon-color;
+
+      svg {
+        color: @mk-select-gray-icon-color;
       }
+
       .@{select-prefix-cls}-focused &,
       &:hover,
       &:focus,
       &:active {
         .active;
-        border-color:@mk-btn-disabled-bg;
-        color:@mk-color;
-        // svg{
-        //   color:@mk-color;
-        // }
+        border-color: @mk-btn-disabled-bg;
+        color: @mk-color;
       }
-    } 
+    }
   }
-
 
   &-selection {
     outline: none;
@@ -235,10 +237,8 @@
 
   &-selection__rendered {
     display: block;
-    margin-left: @control-padding-horizontal - 1px;
-    margin-right: @control-padding-horizontal - 1px;
     position: relative;
-    line-height: @input-height-base - 2px;
+    line-height: @input-height-base - 1px;
     // https://github.com/ant-design/ant-design/issues/3481#issuecomment-254721026
     &:after {
       content: '.';

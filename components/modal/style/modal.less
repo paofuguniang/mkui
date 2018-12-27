@@ -77,23 +77,31 @@
   &-header {
     padding: 16px 24px;
     border-radius: @border-radius-base @border-radius-base 0 0;
-    background: @component-background;
+    background: @modal-header-bg;
     color: @text-color;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    // border-bottom: @border-width-base @border-style-base @border-color-split;
   }
 
   &-body {
-    padding: 24px;
+    padding: 8px 24px;
     font-size: @font-size-base;
     line-height: @line-height-base;
     word-wrap: break-word;
   }
 
   &-footer {
-    border-top: @border-width-base @border-style-base @border-color-split;
-    padding: 10px 16px;
+    // border-top: @border-width-base @border-style-base @border-color-split;
+    padding: 16px 24px;
     text-align: right;
     border-radius: 0 0 @border-radius-base @border-radius-base;
+
+    .@{ant-prefix}-btn {
+      border: none;
+      font-size: 16px;
+      height: 36px;
+      padding: 0 22px;
+    }
+
     button + button {
       margin-left: 8px;
       margin-bottom: 0;
@@ -114,7 +122,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: @modal-mask-bg; // lesshint duplicateProperty: false
+    background-color: @modal-mask-bg;
     height: 100%;
     z-index: @zindex-modal-mask;
     filter: ~"alpha(opacity=50)";
@@ -132,7 +140,7 @@
 .@{dialog-prefix-cls}-centered {
   text-align: center;
   &:before {
-    content: '';
+    content: "";
     display: inline-block;
     height: 100%;
     vertical-align: middle;

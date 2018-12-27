@@ -22,13 +22,13 @@ import { Tag } from 'antd';
 
 ReactDOM.render(
   <div>
-      <Tag type="normal">默认</Tag>
-      <Tag type="success">mk-success</Tag>
-      <Tag type="warning">mk-warning</Tag>
-      <br/>
-      <Tag type="mk" color="blue">blue</Tag>
-      <Tag type="mk" color="geekblue">geekblue</Tag>
-      <Tag type="mk" color="purple">purple</Tag>
+    <Tag type="normal">默认</Tag>
+    <Tag type="success">mk-success</Tag>
+    <Tag type="warning">mk-warning</Tag>
+    <br />
+    <Tag type="mk" color="blue">blue</Tag>
+    <Tag type="mk" color="geekblue">geekblue</Tag>
+    <Tag type="mk" color="purple">purple</Tag>
   </div>,
   mountNode);
 ````
