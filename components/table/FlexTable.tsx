@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// import RcTable from './rc-table';
+import RcTable from 'rc-table';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import shallowEqual from 'shallowequal';
@@ -38,8 +38,6 @@ import {
 } from './interface';
 import { RadioChangeEvent } from '../radio';
 import { CheckboxChangeEvent } from '../checkbox';
-import './style/rcTable.less';
-const RcTable = require('./rc-table');
 function noop() {
 }
 
@@ -85,6 +83,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     onChange: PropTypes.func,
     locale: PropTypes.object,
     dropdownPrefixCls: PropTypes.string,
+    OptionTable: PropTypes.node
   };
 
   static defaultProps = {
@@ -1024,11 +1023,11 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
 
   renderTable = (contextLocale: TableLocale, loading: SpinProps) => {
     const locale = { ...contextLocale, ...this.props.locale };
-    const { style, className, prefixCls, showHeader, ...restProps } = this.props;
+    const { style, className, prefixCls, showHeader, OptionTable, ...restProps } = this.props;
     const data = this.getCurrentPageData();
     const expandIconAsCell = this.props.expandedRowRender && this.props.expandIconAsCell !== false;
 
-    const classString = classNames({      
+    const classString = classNames({
       [`${prefixCls}-${this.props.size}`]: true,
       [`${prefixCls}-bordered`]: this.props.bordered,
       [`${prefixCls}-empty`]: !data.length,
@@ -1046,9 +1045,9 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     if ('expandIconColumnIndex' in restProps) {
       expandIconColumnIndex = restProps.expandIconColumnIndex as number;
     }
-
+    let DrawTable = OptionTable || RcTable;
     return (
-      <RcTable
+      <DrawTable
         key="table"
         {...restProps}
         onRow={this.onRow}

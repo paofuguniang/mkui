@@ -15,6 +15,7 @@ Simple table with actions.
 
 ````jsx
 import { Table, Divider, Tag } from 'antd';
+import RcTable from 'rc-table';
 
 const columns = [{
   title: 'Name',
