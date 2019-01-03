@@ -133,7 +133,7 @@ export interface TableProps<T> {
   bodyStyle?: React.CSSProperties;
   className?: string;
   style?: React.CSSProperties;
-  OptionTable: React.ReactNode;
+  OptionTable: any;
   children?: React.ReactNode;
 }
 

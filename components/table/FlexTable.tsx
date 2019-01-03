@@ -83,7 +83,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     onChange: PropTypes.func,
     locale: PropTypes.object,
     dropdownPrefixCls: PropTypes.string,
-    OptionTable: PropTypes.node
+    OptionTable: PropTypes.func
   };
 
   static defaultProps = {
