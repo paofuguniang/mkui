@@ -103,6 +103,8 @@ export { default as Switch } from './switch';
 
 export { default as Table } from './table';
 
+export { default as FlexTable } from './table/FlexTable';
+
 export { default as Transfer } from './transfer';
 
 export { default as Tree } from './tree';

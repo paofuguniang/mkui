@@ -41,6 +41,9 @@ const eslintrc = {
     'function-paren-newline': 0,
     'object-curly-newline': 0,
     'no-restricted-globals': 0,
+    'no-duplicate-selectors': 0,
+    'block-closing-brace-newline-before': ['never-multi-line'],
+    'block-closing-brace-empty-line-before': ['never'],
   },
 };
 

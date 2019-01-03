@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import RcTable from 'rc-table';
+// import RcTable from './rc-table';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import shallowEqual from 'shallowequal';
@@ -38,7 +38,8 @@ import {
 } from './interface';
 import { RadioChangeEvent } from '../radio';
 import { CheckboxChangeEvent } from '../checkbox';
-
+import './style/rcTable.less';
+const RcTable = require('./rc-table');
 function noop() {
 }
 
@@ -138,7 +139,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
   }
 
   getCheckboxPropsByItem = (item: T, index: number) => {
-    const  rowSelection = getRowSelection(this.props);
+    const rowSelection = getRowSelection(this.props);
     if (!rowSelection.getCheckboxProps) {
       return {};
     }
@@ -186,13 +187,13 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
       });
     }
     if (nextProps.rowSelection &&
-        'selectedRowKeys' in nextProps.rowSelection) {
+      'selectedRowKeys' in nextProps.rowSelection) {
       this.store.setState({
         selectedRowKeys: nextProps.rowSelection.selectedRowKeys || [],
       });
     }
     if ('dataSource' in nextProps &&
-        nextProps.dataSource !== this.props.dataSource) {
+      nextProps.dataSource !== this.props.dataSource) {
       this.store.setState({
         selectionDirty: false,
       });
@@ -204,7 +205,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     if (this.getSortOrderColumns(this.columns).length > 0) {
       const sortState = this.getSortStateFromColumns(this.columns);
       if (sortState.sortColumn !== this.state.sortColumn ||
-          sortState.sortOrder !== this.state.sortOrder) {
+        sortState.sortOrder !== this.state.sortOrder) {
         this.setState(sortState);
       }
     }
@@ -345,7 +346,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
   getSorterFn(state: TableState<T>) {
     const { sortOrder, sortColumn } = state || this.state;
     if (!sortOrder || !sortColumn ||
-        typeof sortColumn.sorter !== 'function') {
+      typeof sortColumn.sorter !== 'function') {
       return;
     }
 
@@ -535,7 +536,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
         selectWay: 'onSelect',
         record,
         checked,
-        changeRowKeys: void(0),
+        changeRowKeys: void (0),
         nativeEvent,
       });
     }
@@ -555,7 +556,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
       selectWay: 'onSelect',
       record,
       checked,
-      changeRowKeys: void(0),
+      changeRowKeys: void (0),
       nativeEvent,
     });
   }
@@ -642,8 +643,8 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     };
     // Controlled current prop will not respond user interaction
     if (props.pagination &&
-        typeof props.pagination === 'object' &&
-        'current' in (props.pagination as Object)) {
+      typeof props.pagination === 'object' &&
+      'current' in (props.pagination as Object)) {
       newState.pagination = {
         ...pagination,
         current: this.state.pagination.current,
@@ -671,7 +672,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
       const props = this.getCheckboxPropsByItem(record, index);
       const handleChange = (e: RadioChangeEvent | CheckboxChangeEvent) => {
         type === 'radio' ? this.handleRadioSelect(record, index, e) :
-                           this.handleSelect(record, index, e);
+          this.handleSelect(record, index, e);
       };
 
       return (
@@ -692,7 +693,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
   getRecordKey = (record: T, index: number) => {
     const { rowKey } = this.props;
     const recordKey = (typeof rowKey === 'function') ?
-      rowKey(record, index) :  (record as any)[rowKey as string];
+      rowKey(record, index) : (record as any)[rowKey as string];
     warning(recordKey !== undefined,
       'Each record in dataSource of table should have a unique `key` prop, ' +
       'or set `rowKey` of Table to an unique primary key, ' +
@@ -728,7 +729,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
       };
       if (rowSelection.type !== 'radio') {
         const checkboxAllDisabled = data.every((item, index) => this.getCheckboxPropsByItem(item, index).disabled);
-        selectionColumn.title  = selectionColumn.title || (
+        selectionColumn.title = selectionColumn.title || (
           <SelectionCheckboxAll
             store={this.store}
             locale={locale}
@@ -1027,7 +1028,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     const data = this.getCurrentPageData();
     const expandIconAsCell = this.props.expandedRowRender && this.props.expandIconAsCell !== false;
 
-    const classString = classNames({
+    const classString = classNames({      
       [`${prefixCls}-${this.props.size}`]: true,
       [`${prefixCls}-bordered`]: this.props.bordered,
       [`${prefixCls}-empty`]: !data.length,
@@ -1073,7 +1074,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
       loading = {
         spinning: loading,
       };
-    }    
+    }
     const table = (
       <LocaleReceiver
         componentName="Table"
@@ -1090,7 +1091,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
 
     return (
       <div
-        className={classNames(`${prefixCls}-wrapper`, className)}
+        className={classNames(`${prefixCls}-wrapper ${prefixCls}-flex`, className)}
         style={style}
       >
         <Spin

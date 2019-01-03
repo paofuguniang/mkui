@@ -1,6 +1,6 @@
 import '../../style/index.less';
 import './index.less';
-
+import './rcTable.less';
 // style dependencies
 import '../../radio/style';
 import '../../checkbox/style';

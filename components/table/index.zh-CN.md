@@ -219,6 +219,9 @@ class NameColumn extends Table.Column<IUser> {}
 </Table>
 
 ```
+## table改造版
+
+根据table无法做到自动高度延伸的问题，scroll滚动条出现导致的布局问题，所以提供一个内部改造版本
 
 ## 注意
 
