@@ -31,8 +31,8 @@
     &:active,
     &.active {
       color:@color;
-      background-color:transparent;
-      border:none;
+      // background-color:transparent;
+      // border:none;
       // text-shadow: none;
       // box-shadow: none;
     }
@@ -113,12 +113,8 @@
 }
 
 .button-variant-text(@color; @hover-color; @disabled-color) {
-
   color:@color;
-  height:auto;
-  padding:0;
-  box-shadow:none;
-  border:none;
+  cursor: pointer;
 
   &:hover {
     color:@hover-color;
@@ -126,13 +122,11 @@
 
   &:focus {
     color:@hover-color;
-    box-shadow:none;
   }
 
   &:active,
   &.active {
     color:@hover-color;
-    box-shadow:none;
   }
 
   .button-text-disabled(@disabled-color);
