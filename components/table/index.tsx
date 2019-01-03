@@ -1,6 +1,5 @@
-// import Table from './Table';
-// import FlexTable from './FlexTable';
-import Table from './FlexTable';
+import Table from './Table';
+import FlexTable from './FlexTable';
 export * from './interface';
 export default Table;
-// export { FlexTable };
+export { FlexTable };
