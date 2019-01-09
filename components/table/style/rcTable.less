@@ -68,10 +68,6 @@
         tr {
             transition: all .3s ease;
         }
-        th,
-        td {
-            white-space: nowrap;
-        }
         &-expand-icon-col {
             width: 34px;
         }
@@ -142,13 +138,11 @@
             & .@{tablePrefixCls}-body-inner {
                 margin-right: -20px;
                 padding-right: 20px;
-            }  
-
+            }
         }
         &-fixed-right {
             right: 0;
-            box-shadow: -4px 0 4px rgba(100, 100, 100, 0.1); 
-            // hide expand row content in right fixed Table
+            box-shadow: -4px 0 4px rgba(100, 100, 100, 0.1); // hide expand row content in right fixed Table
             // https://github.com/ant-design/ant-design/issues/1898
             .@{tablePrefixCls}-expanded-row {
                 color: transparent;
@@ -161,6 +155,5 @@
         &&-scroll-position-right &-fixed-right {
             box-shadow: none;
         }
-        
-    }   
+    }
 }
