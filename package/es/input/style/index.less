@@ -1,0 +1,85 @@
+@import "../../style/themes/default";
+@import "../../style/mixins/index";
+@import "./mixin";
+
+// Input styles
+.@{ant-prefix}-input {
+  .reset-component;
+  .input;
+}
+
+//== Style for input-group: input with label, with button or dropdown...
+.@{ant-prefix}-input-group {
+  .reset-component;
+  .input-group(~"@{ant-prefix}-input");
+  &-wrapper {
+    display: inline-block;
+    vertical-align: top; // https://github.com/ant-design/ant-design/issues/6403
+    width: 100%;
+    &:hover{
+      input{
+        .input-hover()
+      }
+      .@{ant-prefix}-input-group-addon{
+        .input-hover();
+        &>i>svg{
+          .icon-hover()
+        }
+      }
+      .@{ant-prefix}-input-suffix{
+        &>i>svg{
+        .icon-hover()
+        }
+      }
+    }
+  }
+}
+
+// Input with affix: prefix or suffix
+.@{ant-prefix}-input-affix-wrapper {
+  .reset-component;
+  .input-affix-wrapper(~"@{ant-prefix}-input");
+  &:not(.ant-input-affix-wrapper-gray):hover {
+    .@{ant-prefix}-input:not(.@{ant-prefix}-input-disabled) {
+    .input-hover();
+  }
+}
+
+  &-normal {
+    .@{ant-prefix}-input{
+      border: 1px solid @mk-border-color;
+      padding:@input-padding-vertical-base @input-padding-horizontal-base;
+    }
+  }
+
+  &-gray {
+    svg{
+      color:@mk-table-header-color;
+    }
+    .@{ant-prefix}-input{
+      border: 1px solid @mk-btn-gray-bg;
+      padding:@input-padding-vertical-base @input-padding-horizontal-base;
+      background:@mk-btn-gray-bg;
+      
+      &:focus,
+      &:active
+      {
+        background:@mk-btn-gray-hover-bg;
+        // &::placeholder{
+        //   color:#959595;
+        // }
+        .placeholder(@mk-input-gray-color);
+        & + .@{ant-prefix}-input-suffix svg{
+          color:@mk-table-header-color;
+        }
+      }
+    }
+  }
+
+  // https://github.com/ant-design/ant-design/issues/6144
+  .@{ant-prefix}-input {
+    min-height: 100%;  // use min-height, assume that no smaller height to override
+  }
+}
+
+@import "./search-input";
